@@ -38,7 +38,8 @@ namespace Commander
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<ICommanderRepo, MockRepo>();
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
+            // services.AddScoped<ICommanderRepo, MockRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
