@@ -24,6 +24,16 @@
             this.db.Commands.Add(cmd);
         }
 
+        public void DeleteCommand(Command cmd)
+        {
+            if (cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+
+            this.db.Commands.Remove(cmd);
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             return this.db.Commands.ToList();
@@ -37,6 +47,10 @@
         public bool SaveChanges()
         {
             return (this.db.SaveChanges() >= 0);
+        }
+
+        public void UpdateCommand(Command cmd)
+        {            
         }
     }
 }

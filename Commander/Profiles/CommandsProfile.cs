@@ -8,7 +8,11 @@
     {
         public CommandsProfile()
         {
+            // source => destination
             CreateMap<Command, CommandReadDto>();
+            CreateMap<CommandCreateDto, Command>();
+            CreateMap<CommandUpdateDto, Command>();
+            CreateMap<Command, CommandUpdateDto>();
         }
     }
 }
